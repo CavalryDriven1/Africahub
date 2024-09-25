@@ -1,0 +1,651 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local GUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Smooth = Instance.new("UICorner")
+local Reach = Instance.new("TextButton")
+local Smooth_2 = Instance.new("UICorner")
+local Speed = Instance.new("TextButton")
+local Smooth_3 = Instance.new("UICorner")
+local InfiniteYield = Instance.new("TextButton")
+local Smooth_4 = Instance.new("UICorner")
+local KillBot = Instance.new("TextButton")
+local Smooth_5 = Instance.new("UICorner")
+local AutoTimeCube = Instance.new("TextButton")
+local Smooth_6 = Instance.new("UICorner")
+local RemoveKillPart = Instance.new("TextButton")
+local Smooth_7 = Instance.new("UICorner")
+local Smooth_8 = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
+local ModChecker = Instance.new("TextButton")
+local Smooth_9 = Instance.new("UICorner")
+local AttachToBack = Instance.new("TextButton")
+local Smooth_10 = Instance.new("UICorner")
+local Reach2 = Instance.new("TextButton")
+local Smooth_11 = Instance.new("UICorner")
+local ESP = Instance.new("TextButton")
+local Smooth_12 = Instance.new("UICorner")
+local ChatBypasser = Instance.new("TextButton")
+local Smooth_13 = Instance.new("UICorner")
+local AntiCheatBypass_2 = Instance.new("TextLabel")
+local Smooth_14 = Instance.new("UICorner")
+local LowBaseplate = Instance.new("TextButton")
+local Smooth_15 = Instance.new("UICorner")
+
+--Properties:
+
+GUI.Name = "GUI"
+GUI.Parent = game.CoreGui
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = GUI
+Frame.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.363344043, 0, 0.245024875, 0)
+Frame.Size = UDim2.new(0, 339, 0, 409)
+Frame.Active = true
+Frame.Draggable = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 339, 0, 60)
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "Africa Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Smooth.CornerRadius = UDim.new(0, 10)
+Smooth.Name = "Smooth"
+Smooth.Parent = TextLabel
+
+Reach.Name = "Reach"
+Reach.Parent = Frame
+Reach.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Reach.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Reach.BorderSizePixel = 0
+Reach.Position = UDim2.new(0.0678466111, 0, 0.19070904, 0)
+Reach.Size = UDim2.new(0, 82, 0, 34)
+Reach.Font = Enum.Font.Unknown
+Reach.Text = "Reach"
+Reach.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reach.TextScaled = true
+Reach.TextSize = 14.000
+Reach.TextTransparency = 0.400
+Reach.TextWrapped = true
+Reach.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CavalryDriven1/reach/refs/heads/main/reach",true))();
+end)
+
+Smooth_2.CornerRadius = UDim.new(0, 6)
+Smooth_2.Name = "Smooth"
+Smooth_2.Parent = Reach
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Speed.BorderSizePixel = 0
+Speed.Position = UDim2.new(0.37758112, 0, 0.19070904, 0)
+Speed.Size = UDim2.new(0, 82, 0, 34)
+Speed.Font = Enum.Font.Unknown
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextScaled = true
+Speed.TextSize = 14.000
+Speed.TextTransparency = 0.400
+Speed.TextWrapped = true
+Speed.MouseButton1Down:Connect(function()
+	local walkSpeedActive = false
+	local UserInputService = game:GetService("UserInputService")
+	local StarterGui = game:GetService("StarterGui")
+
+	-- Function to display the notification when the script is executed
+	local function showInitialNotification()
+		StarterGui:SetCore("SendNotification", {
+			Title = "Speed Enabled";  -- Main text
+			Text = "Press 'E' to toggle";  -- Subtext
+			Duration = 5;  -- Display time (in seconds)
+		})
+	end
+
+	-- Show the notification when the script is executed
+	showInitialNotification()
+
+	-- Function to handle key press input
+	local function onInputBegan(input)
+		if input.KeyCode == Enum.KeyCode.E then
+			walkSpeedActive = not walkSpeedActive
+		end
+	end
+
+	UserInputService.InputBegan:Connect(onInputBegan)
+
+	-- Loop to handle speed changes
+	while true do
+		if walkSpeedActive and game.Players.LocalPlayer.Character then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0.8
+		end
+		wait()
+	end
+
+end)
+
+Smooth_3.CornerRadius = UDim.new(0, 6)
+Smooth_3.Name = "Smooth"
+Smooth_3.Parent = Speed
+
+InfiniteYield.Name = "InfiniteYield"
+InfiniteYield.Parent = Frame
+InfiniteYield.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+InfiniteYield.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InfiniteYield.BorderSizePixel = 0
+InfiniteYield.Position = UDim2.new(0.690265477, 0, 0.312958449, 0)
+InfiniteYield.Size = UDim2.new(0, 82, 0, 34)
+InfiniteYield.Font = Enum.Font.Unknown
+InfiniteYield.Text = "Infinite Yield"
+InfiniteYield.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfiniteYield.TextScaled = true
+InfiniteYield.TextSize = 14.000
+InfiniteYield.TextTransparency = 0.400
+InfiniteYield.TextWrapped = true
+InfiniteYield.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+Smooth_4.CornerRadius = UDim.new(0, 6)
+Smooth_4.Name = "Smooth"
+Smooth_4.Parent = InfiniteYield
+
+KillBot.Name = "KillBot"
+KillBot.Parent = Frame
+KillBot.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+KillBot.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KillBot.BorderSizePixel = 0
+KillBot.Position = UDim2.new(0.0678466111, 0, 0.435207814, 0)
+KillBot.Size = UDim2.new(0, 82, 0, 34)
+KillBot.Font = Enum.Font.Unknown
+KillBot.Text = "Kill Bot"
+KillBot.TextColor3 = Color3.fromRGB(255, 255, 255)
+KillBot.TextScaled = true
+KillBot.TextSize = 14.000
+KillBot.TextTransparency = 0.400
+KillBot.TextWrapped = true
+KillBot.MouseButton1Down:Connect(function()
+	local teleportSpeed = 1.5
+
+	local function teleportToRandomPlayer()
+		local players = game:GetService("Players"):GetPlayers()
+		local randomPlayer
+		repeat
+			randomPlayer = players[math.random(#players)]
+		until randomPlayer.Character and randomPlayer.Character:FindFirstChild("Humanoid") and randomPlayer.Character.Humanoid.Health > 0
+
+		while true do
+			local player = game.Players.LocalPlayer
+			if player.Character then
+				local distance = (randomPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+				if distance < 5 then
+					player.Character.HumanoidRootPart.CFrame = randomPlayer.Character.HumanoidRootPart.CFrame
+					break
+				end
+				local direction = (randomPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Unit
+				player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame + direction * teleportSpeed
+				wait()
+			end
+		end
+	end
+
+	while true do
+		teleportToRandomPlayer()
+		wait()
+	end
+end)
+
+Smooth_5.CornerRadius = UDim.new(0, 6)
+Smooth_5.Name = "Smooth"
+Smooth_5.Parent = KillBot
+
+AutoTimeCube.Name = "AutoTimeCube"
+AutoTimeCube.Parent = Frame
+AutoTimeCube.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+AutoTimeCube.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AutoTimeCube.BorderSizePixel = 0
+AutoTimeCube.Position = UDim2.new(0.690265477, 0, 0.19070904, 0)
+AutoTimeCube.Size = UDim2.new(0, 82, 0, 34)
+AutoTimeCube.Font = Enum.Font.Unknown
+AutoTimeCube.Text = "Auto Time Cube"
+AutoTimeCube.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoTimeCube.TextScaled = true
+AutoTimeCube.TextSize = 14.000
+AutoTimeCube.TextTransparency = 0.400
+AutoTimeCube.TextWrapped = true
+AutoTimeCube.MouseButton1Down:Connect(function()
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local speed = 45
+	local spinSpeed = 5 -- Change this to adjust the spin speed
+
+	local collectedParts = {}
+
+	local function getClosestPart()
+		local closestPart = nil
+		local shortestDistance = math.huge -- Start with a very large number
+
+		-- Loop through all "TimeRain" parts in Workspace.Gifts
+		for _, part in ipairs(game:GetService("Workspace").Gifts:GetDescendants()) do
+			if part.Name == "TimeRain" and not collectedParts[part] then
+				local distance = (humanoid.RootPart.Position - part.Position).Magnitude
+				if distance < shortestDistance then
+					shortestDistance = distance
+					closestPart = part
+				end
+			end
+		end
+
+		return closestPart
+	end
+
+	local function teleportToPart(part)
+		local startCFrame = humanoid.RootPart.CFrame
+		local endCFrame = part.CFrame
+		local distance = (startCFrame.Position - endCFrame.Position).Magnitude
+		local duration = distance / speed
+		local startTime = tick()
+
+		while tick() - startTime < duration do
+			local t = (tick() - startTime) / duration
+			humanoid.RootPart.CFrame = startCFrame:Lerp(endCFrame, t)
+			humanoid.RootPart.CFrame = humanoid.RootPart.CFrame * CFrame.Angles(0, math.rad(spinSpeed), 0) -- Add spinning
+			wait()
+		end
+
+		humanoid.RootPart.CFrame = endCFrame
+		wait(0.1)
+	end
+
+	local function teleportBack()
+		local startCFrame = humanoid.RootPart.CFrame
+		local endCFrame = CFrame.new(Vector3.new(3, 5, -1))
+		local distance = (startCFrame.Position - endCFrame.Position).Magnitude
+		local duration = distance / speed
+		local startTime = tick()
+
+		while tick() - startTime < duration do
+			local t = (tick() - startTime) / duration
+			humanoid.RootPart.CFrame = startCFrame:Lerp(endCFrame, t)
+			humanoid.RootPart.CFrame = humanoid.RootPart.CFrame * CFrame.Angles(0, math.rad(spinSpeed), 0) -- Add spinning
+			wait()
+		end
+
+		humanoid.RootPart.CFrame = endCFrame
+	end
+
+	while true do
+		local closestPart = getClosestPart()
+
+		if closestPart then
+			teleportToPart(closestPart)
+			collectedParts[closestPart] = true
+		else
+			wait(1) -- Wait a bit before checking again if no parts are found
+		end
+	end
+
+	-- Once all parts are collected, teleport back
+	teleportBack()
+end)
+
+Smooth_6.CornerRadius = UDim.new(0, 6)
+Smooth_6.Name = "Smooth"
+Smooth_6.Parent = AutoTimeCube
+
+RemoveKillPart.Name = "RemoveKillPart"
+RemoveKillPart.Parent = Frame
+RemoveKillPart.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+RemoveKillPart.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RemoveKillPart.BorderSizePixel = 0
+RemoveKillPart.Position = UDim2.new(0.37758112, 0, 0.435207814, 0)
+RemoveKillPart.Size = UDim2.new(0, 82, 0, 34)
+RemoveKillPart.Font = Enum.Font.Unknown
+RemoveKillPart.Text = "Remove Killpart"
+RemoveKillPart.TextColor3 = Color3.fromRGB(255, 255, 255)
+RemoveKillPart.TextScaled = true
+RemoveKillPart.TextSize = 14.000
+RemoveKillPart.TextTransparency = 0.400
+RemoveKillPart.TextWrapped = true
+RemoveKillPart.MouseButton1Down:Connect(function()
+	local killPart = workspace.Structure.KillPart.KillPart
+
+	-- Make the part collideable
+	killPart.CanCollide = true
+
+	-- Delete the TouchInterest
+	if killPart:FindFirstChild("TouchInterest") then
+		killPart.TouchInterest:Destroy()
+	end
+
+	-- Set the transparency to 0
+	killPart.Transparency = 0
+end)
+
+Smooth_7.CornerRadius = UDim.new(0, 6)
+Smooth_7.Name = "Smooth"
+Smooth_7.Parent = RemoveKillPart
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = Frame
+
+ModChecker.Name = "ModChecker"
+ModChecker.Parent = Frame
+ModChecker.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+ModChecker.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ModChecker.BorderSizePixel = 0
+ModChecker.Position = UDim2.new(0.380530983, 0, 0.312958449, 0)
+ModChecker.Size = UDim2.new(0, 82, 0, 34)
+ModChecker.Font = Enum.Font.Unknown
+ModChecker.Text = "Mod Checker"
+ModChecker.TextColor3 = Color3.fromRGB(255, 255, 255)
+ModChecker.TextScaled = true
+ModChecker.TextSize = 14.000
+ModChecker.TextTransparency = 0.400
+ModChecker.TextWrapped = true
+ModChecker.MouseButton1Down:Connect(function()
+	-- Define the group ID and the local player
+	local groupId = 7548958 -- Replace with the actual group ID
+	local player = game.Players.LocalPlayer
+
+	-- Create a persistent notification that stays in the bottom right
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Notifier";
+		Text = "Checking For Mods...";
+		Duration = math.huge;  -- Infinite duration
+	})
+
+	-- Function to kick the local player if a group member joins
+	local function onPlayerAdded(newPlayer)
+		-- Check if the new player is in the group
+		if newPlayer:IsInGroup(groupId) then
+			-- Kick the local player with a message
+			player:Kick("Mod has joined!")
+		end
+	end
+
+	-- Connect to the PlayerAdded event
+	game.Players.PlayerAdded:Connect(onPlayerAdded)
+
+	-- Check existing players in the game (in case they are already there)
+	for _, existingPlayer in pairs(game.Players:GetPlayers()) do
+		if existingPlayer:IsInGroup(groupId) then
+			-- Kick the local player immediately if a group member is already in the game
+			player:Kick("Mod has joined!")
+		end
+	end
+end)
+
+Smooth_9.CornerRadius = UDim.new(0, 6)
+Smooth_9.Name = "Smooth"
+Smooth_9.Parent = ModChecker
+
+AttachToBack.Name = "AttachToBack"
+AttachToBack.Parent = Frame
+AttachToBack.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+AttachToBack.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AttachToBack.BorderSizePixel = 0
+AttachToBack.Position = UDim2.new(0.690265477, 0, 0.435207814, 0)
+AttachToBack.Size = UDim2.new(0, 82, 0, 34)
+AttachToBack.Font = Enum.Font.Unknown
+AttachToBack.Text = "Attach to Back"
+AttachToBack.TextColor3 = Color3.fromRGB(255, 255, 255)
+AttachToBack.TextScaled = true
+AttachToBack.TextSize = 14.000
+AttachToBack.TextTransparency = 0.400
+AttachToBack.TextWrapped = true
+AttachToBack.MouseButton1Down:Connect(function()
+	-- Services
+	local Players = game:GetService("Players")
+	local TweenService = game:GetService("TweenService")
+	local StarterGui = game:GetService("StarterGui")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+
+	-- Variables
+	local player = Players.LocalPlayer
+	local teleportDistance = 15 -- Reduced size by 5 studs
+	local teleportBehindDistance = 5 -- Distance behind the target
+	local randomOffsetRange = 4 -- Random offset for unpredictability
+	local tweenDuration = 0.05 -- Duration for the teleport tween
+	local isActive = false -- Toggle state
+	local currentTarget = nil -- Keep track of the current target
+	local humanoidRootPart -- HumanoidRootPart of the player
+	local redBox -- Red box part for teleport range indicator
+
+	-- Notification function
+	local function notify(message)
+		StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = message,
+			Color = Color3.new(1, 1, 0),
+			Font = Enum.Font.SourceSans,
+			FontSize = Enum.FontSize.Size24
+		})
+	end
+
+	-- Tween function
+	local function tweenCFrame(targetCFrame)
+		local tweenInfo = TweenInfo.new(tweenDuration, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+		local tween = TweenService:Create(humanoidRootPart, tweenInfo, {CFrame = targetCFrame})
+		tween:Play()
+		tween.Completed:Wait()
+	end
+
+	-- Function to get the nearest valid player
+	local function getNearestPlayer()
+		local closestPlayer = nil
+		local shortestDistance = teleportDistance
+
+		for _, otherPlayer in pairs(Players:GetPlayers()) do
+			if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
+				local otherHumanoidRootPart = otherPlayer.Character.HumanoidRootPart
+				local distance = (humanoidRootPart.Position - otherHumanoidRootPart.Position).Magnitude
+
+				if distance <= shortestDistance and otherPlayer.Character.Humanoid.Health > 0 then
+					closestPlayer = otherPlayer
+					shortestDistance = distance
+				end
+			end
+		end
+
+		return closestPlayer
+	end
+
+	-- Function to teleport behind the current target
+	local function teleportToTarget(target)
+		local otherHumanoidRootPart = target.Character.HumanoidRootPart
+
+		-- Calculate the teleport position with random offset
+		local direction = (otherHumanoidRootPart.CFrame.LookVector * -1).unit
+		local randomOffset = Vector3.new(math.random(-randomOffsetRange, randomOffsetRange), 0, math.random(-randomOffsetRange, randomOffsetRange))
+		local targetPosition = otherHumanoidRootPart.Position + (direction * teleportBehindDistance) + randomOffset
+
+		-- Set CFrame to teleport and face the target's back
+		tweenCFrame(CFrame.new(targetPosition, otherHumanoidRootPart.Position))
+	end
+
+	-- Function to create or update the red box indicator
+	local function createRedBox()
+		if redBox then
+			redBox:Destroy()
+		end
+
+		redBox = Instance.new("Part")
+		redBox.Size = Vector3.new(teleportDistance * 1.5, 0.1, teleportDistance * 2) -- Box size based on teleportDistance
+		redBox.BrickColor = BrickColor.new("Bright red")
+		redBox.Material = Enum.Material.Neon
+		redBox.Anchored = true
+		redBox.CanCollide = false
+		redBox.Transparency = 0.3 -- Slightly transparent
+		redBox.Parent = workspace
+	end
+
+	-- Update the red box's position
+	local function updateRedBoxPosition()
+		if redBox and humanoidRootPart then
+			redBox.Position = humanoidRootPart.Position - Vector3.new(0, 2.9, 0) -- Position under feet
+		end
+	end
+
+	-- Main teleportation logic
+	local function handleTeleportation()
+		if not currentTarget or not currentTarget.Character or currentTarget.Character.Humanoid.Health <= 0 then
+			currentTarget = getNearestPlayer()
+		end
+
+		if currentTarget then
+			teleportToTarget(currentTarget)
+		end
+	end
+
+	-- Character setup
+	local function setupCharacter(character)
+		humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+		createRedBox() -- Create the red box indicator
+	end
+
+	-- Toggle function for teleportation
+	local function toggleTeleport()
+		isActive = not isActive
+		if isActive then
+			notify("Teleporting enabled! Press Q to disable.")
+			redBox.Transparency = 0.3 -- Make it visible again
+			while isActive do
+				handleTeleportation()
+				updateRedBoxPosition()
+				wait(0.1) -- Check every 0.1 seconds
+			end
+		else
+			notify("Teleporting disabled! Press Q to enable.")
+			currentTarget = nil
+			-- Instead of destroying the red box, just make it invisible
+			redBox.Transparency = 1 -- Make it invisible instead of destroying
+		end
+	end
+
+	-- Key press event
+	UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.KeyCode == Enum.KeyCode.Q and not gameProcessedEvent then
+			toggleTeleport()
+		end
+	end)
+
+	-- Character added event
+	player.CharacterAdded:Connect(setupCharacter)
+
+	-- Initial setup
+	setupCharacter(player.Character or player.CharacterAdded:Wait())
+
+	-- Update red box position as the character moves
+	RunService.RenderStepped:Connect(updateRedBoxPosition)
+
+end)
+
+Smooth_10.CornerRadius = UDim.new(0, 6)
+Smooth_10.Name = "Smooth"
+Smooth_10.Parent = AttachToBack
+
+Reach2.Name = "Reach 2"
+Reach2.Parent = Frame
+Reach2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Reach2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Reach2.BorderSizePixel = 0
+Reach2.Position = UDim2.new(0.0678466111, 0, 0.312958449, 0)
+Reach2.Size = UDim2.new(0, 82, 0, 34)
+Reach2.Font = Enum.Font.Unknown
+Reach2.Text = "Reach 2"
+Reach2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reach2.TextScaled = true
+Reach2.TextSize = 14.000
+Reach2.TextTransparency = 0.400
+Reach2.TextWrapped = true
+Reach2.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MaxicsSoft/XyrezAutoRank/main/StealTimeFromOthers.lua"))()
+end)
+
+Smooth_11.CornerRadius = UDim.new(0, 6)
+Smooth_11.Name = "Smooth"
+Smooth_11.Parent = Reach2
+
+ESP.Name = "ESP"
+ESP.Parent = Frame
+ESP.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+ESP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ESP.BorderSizePixel = 0
+ESP.Position = UDim2.new(0.0678466111, 0, 0.555012226, 0)
+ESP.Size = UDim2.new(0, 82, 0, 34)
+ESP.Font = Enum.Font.Unknown
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESP.TextScaled = true
+ESP.TextSize = 14.000
+ESP.TextTransparency = 0.400
+ESP.TextWrapped = true
+ESP.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
+end)
+
+Smooth_12.CornerRadius = UDim.new(0, 6)
+Smooth_12.Name = "Smooth"
+Smooth_12.Parent = ESP
+
+ChatBypasser.Name = "ChatBypasser"
+ChatBypasser.Parent = Frame
+ChatBypasser.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+ChatBypasser.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChatBypasser.BorderSizePixel = 0
+ChatBypasser.Position = UDim2.new(0.37758112, 0, 0.555012226, 0)
+ChatBypasser.Size = UDim2.new(0, 82, 0, 34)
+ChatBypasser.Font = Enum.Font.Unknown
+ChatBypasser.Text = "Chat Bypasser"
+ChatBypasser.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChatBypasser.TextScaled = true
+ChatBypasser.TextSize = 14.000
+ChatBypasser.TextTransparency = 0.400
+ChatBypasser.TextWrapped = true
+ChatBypasser.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/shadow62x/catbypass/main/upfix"))()
+end)
+
+Smooth_13.CornerRadius = UDim.new(0, 6)
+Smooth_13.Name = "Smooth"
+Smooth_13.Parent = ChatBypasser
+
+LowBaseplate.Name = "LowBaseplate"
+LowBaseplate.Parent = Frame
+LowBaseplate.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+LowBaseplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LowBaseplate.BorderSizePixel = 0
+LowBaseplate.Position = UDim2.new(0.690265477, 0, 0.555012226, 0)
+LowBaseplate.Size = UDim2.new(0, 82, 0, 34)
+LowBaseplate.Font = Enum.Font.Unknown
+LowBaseplate.Text = "Lower Baseplate"
+LowBaseplate.TextColor3 = Color3.fromRGB(255, 255, 255)
+LowBaseplate.TextScaled = true
+LowBaseplate.TextSize = 14.000
+LowBaseplate.TextTransparency = 0.400
+LowBaseplate.TextWrapped = true
+LowBaseplate.MouseButton1Down:Connect(function()
+	local part = workspace.Structure.Baseplate
+	part.Position = part.Position - Vector3.new(0, 3.4, 0)
+end)
+
+Smooth_15.CornerRadius = UDim.new(0, 6)
+Smooth_15.Name = "Smooth"
+Smooth_15.Parent = LowBaseplate
